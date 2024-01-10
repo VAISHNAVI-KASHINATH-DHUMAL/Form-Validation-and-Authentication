@@ -1,7 +1,7 @@
 import React from 'react';
 import './Register.css';
 import { signUpSchema } from '../schemas/index';
-import {  useNavigate } from 'react-router-dom';
+import {  Link, useNavigate } from 'react-router-dom';
 import { useFormik } from 'formik';
 import { auth } from '../firebase';
 import { createUserWithEmailAndPassword } from 'firebase/auth';
@@ -122,6 +122,7 @@ function Register() {
                         <button className="input-button" type="submit">
                             Registration
                         </button>
+                        <div>Already have an account <Link to="/login">Login</Link></div>
                     </div>
                 </form>
             </div>

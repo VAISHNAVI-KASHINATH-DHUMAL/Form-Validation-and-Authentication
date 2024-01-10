@@ -2,7 +2,7 @@ import React from 'react';
 import './Login.css';
 import { loginScheme } from '../schemas/index';
 import { useFormik } from 'formik';
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { auth } from '../firebase';
 import { signInWithEmailAndPassword } from 'firebase/auth';
 
@@ -82,7 +82,7 @@ function Login() {
                         <button className="input-button" type="submit">
                             Login
                         </button>
-                        <div>Create a new Account</div>
+                        <div>Create a new Account <Link to="/">Register</Link></div>
                     </div>
                 </form>
             </div>
