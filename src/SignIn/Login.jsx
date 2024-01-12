@@ -37,6 +37,10 @@ function Login() {
     });
     console.log(errors);
 
+    const handleReset = () => {
+        navigate('/reset');
+    }
+
     return (
         <>
             <div className="container">
@@ -78,6 +82,7 @@ function Login() {
                     {errors.password && touched.password ? (
                         <p className='form-error'>{errors.password}</p>
                     ) : null}
+                    <p onClick={handleReset} style={{color:'blue',cursor:'pointer'}}>Forgot Password ?</p>
                     <div className="modal-buttons">
                         <button className="input-button" type="submit">
                             Login

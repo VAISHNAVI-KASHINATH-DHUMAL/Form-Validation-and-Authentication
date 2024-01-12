@@ -1,12 +1,12 @@
 import React from 'react';
 import './Register.css';
 import { signUpSchema } from '../schemas/index';
-import {  Link, useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { useFormik } from 'formik';
 import { auth } from '../firebase';
 import { createUserWithEmailAndPassword } from 'firebase/auth';
 
-
+//Assign initial Values for validation
 const initialValues = {
     name: "",
     email: "",
@@ -15,9 +15,10 @@ const initialValues = {
 };
 
 function Register() {
-
+    //used useNavigate() hook for navigation
     const navigate = useNavigate();
 
+    //Validation using formik npm package
     const { values, errors, touched, handleBlur, handleChange, handleSubmit } = useFormik({
         initialValues,
         validationSchema: signUpSchema,

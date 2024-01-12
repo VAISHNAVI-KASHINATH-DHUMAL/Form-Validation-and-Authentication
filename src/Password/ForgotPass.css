@@ -1,0 +1,95 @@
+.container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+form {
+    width: 25%;
+}
+
+.input-button {
+    padding: 1.2rem 3.2rem;
+    outline: none;
+    text-transform: uppercase;
+    border: 0;
+    color: white;
+    border-radius: 4px;
+    background: blue;
+    transition: 0.3s;
+    cursor: pointer;
+    font-family: "Nunito", sans-serif;
+}
+
+.input-button:hover {
+    background: brown;
+}
+
+.input-label {
+    font-size: 11px;
+    text-transform: uppercase;
+    font-weight: 600;
+    letter-spacing: 0.7px;
+    color: black;
+    transition: 0.3s;
+}
+
+.input-block {
+    display: flex;
+    flex-direction: column;
+    padding: 10px 10px 8px;
+    border: 2px solid black;
+    border-radius: 4px;
+    margin-bottom: 20px;
+    transition: 0.3s;
+}
+
+.input-block input {
+    outline: 0;
+    border: 0;
+    padding: 4px 0 0;
+    font-size: 14px;
+}
+
+.input-block input::-moz-placeholder {
+    color: #ccc;
+    opacity: 1;
+}
+
+.input-block input:-ms-input-placeholder {
+    color: #ccc;
+    opacity: 1;
+}
+
+.input-block input::placeholder {
+    color: #ccc;
+    opacity: 1;
+}
+
+.input-block:focus-within {
+    border-color: rgb(156, 59, 59);
+}
+
+.input-block:focus-within .input-label {
+    color: rgba(140, 117, 105, 0.8);
+}
+
+@media (max-width: 750px) {
+    .modal-container {
+        max-width: 90vw;
+    }
+
+    .modal-right {
+        display: none;
+    }
+}
+
+.signin{
+    text-align: center;
+}
