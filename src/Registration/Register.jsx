@@ -1,3 +1,4 @@
+//Importing files, package, firebase, hooks
 import React from 'react';
 import './Register.css';
 import { signUpSchema } from '../schemas/index';
@@ -6,7 +7,7 @@ import { useFormik } from 'formik';
 import { auth } from '../firebase';
 import { createUserWithEmailAndPassword } from 'firebase/auth';
 
-//Assign initial Values for validation
+//Assigned initial Values for validation
 const initialValues = {
     name: "",
     email: "",
@@ -33,6 +34,7 @@ function Register() {
             createUserWithEmailAndPassword(auth, values.email, values.password)
                 .then((userCredential) => {
                     console.log("User created:", userCredential.user.values);
+                    //Navigate to home page
                     navigate('/home');
                 })
                 .catch((error) => {
@@ -44,9 +46,12 @@ function Register() {
 
     return (
         <>
+            {/*Registration Form */}
             <div className="container">
                 <form onSubmit={handleSubmit}>
                     <h1>Registration</h1>
+
+                    {/*Name*/}
                     <div className="input-block">
                         <label htmlFor="name" className="input-label">
                             Name
@@ -65,6 +70,8 @@ function Register() {
                     {errors.name && touched.name ? (
                         <p className='form-error'>{errors.name}</p>
                     ) : null}
+
+                    {/*Email*/}
                     <div className="input-block">
                         <label htmlFor="email" className="input-label">
                             Email
@@ -83,6 +90,8 @@ function Register() {
                     {errors.email && touched.email ? (
                         <p className='form-error'>{errors.email}</p>
                     ) : null}
+
+                    {/*Password*/}
                     <div className="input-block">
                         <label htmlFor="password" className="input-label">
                             Password
@@ -101,6 +110,8 @@ function Register() {
                     {errors.password && touched.password ? (
                         <p className='form-error'>{errors.password}</p>
                     ) : null}
+
+                    {/*Confirm Password*/}
                     <div className="input-block">
                         <label htmlFor="confirm_password" className="input-label">
                             Confirm Password
