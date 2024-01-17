@@ -23,7 +23,7 @@ function ForgotPass() {
         validateOnChange: true,
         validateOnBlur: false,
         
-         //Function for validation (formik and yup) and authentication (firebase)
+        //Function for validation (formik and yup) and authentication (firebase)
         onSubmit: (values) => {
 
             sendPasswordResetEmail(auth, values.email)
